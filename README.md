@@ -1,6 +1,6 @@
 # Simple, Basic, Stupid Reverse Proxy
 
-Hi there! This is a project that I'm coding to learn how reverse proxies work. This project highly affect by Microsoft's [YARP](https://microsoft.github.io/reverse-proxy/) project
+Hi there! This is a project that I'm coding to learn how reverse proxies work. This project highly affected by Microsoft's [YARP](https://microsoft.github.io/reverse-proxy/) project
 
 I know, there's a lot of bad stuff in this warehouse. But you may want to review
 
