@@ -1,0 +1,36 @@
+routes:
+  route-1:
+    port: 8083
+    address: 'http://localhost'
+    type: header
+    headers:
+      header-1:
+        values:
+          - '8083'
+          - first
+  route-2:
+    port: 8084
+    address: 'http://localhost'
+    type: header
+    headers:
+      header-2:
+        values:
+          - '8084'
+          - second
+  route-3:
+    port: 8085
+    address: 'http://localhost'
+    type: header
+    headers:
+      header-3:
+        values:
+          - '8085'
+          - third
+  route-4:
+    port: 8086
+    address: 'http://localhost'
+    type: path
+    paths:
+      - '/'
+      - '/about'
+      - '/contact'
