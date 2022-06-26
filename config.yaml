@@ -1,36 +1,31 @@
 routes:
   route-1:
-    port: 8083
-    address: 'http://localhost'
+    port: 443
+    address: 'https://aligoren.com'
     type: header
     headers:
-      header-1:
+      type:
         values:
-          - '8083'
-          - first
+          - blog
   route-2:
-    port: 8084
-    address: 'http://localhost'
+    port: 443
+    address: 'https://www.google.com.tr'
     type: header
     headers:
-      header-2:
+      type:
         values:
-          - '8084'
-          - second
+          - google
   route-3:
-    port: 8085
-    address: 'http://localhost'
+    port: 443
+    address: 'https://twitter.com'
     type: header
     headers:
-      header-3:
+      type:
         values:
-          - '8085'
-          - third
+          - twitter
   route-4:
-    port: 8086
-    address: 'http://localhost'
+    port: 443
+    address: 'https://github.com'
     type: path
     paths:
-      - '/'
-      - '/about'
-      - '/contact'
+      - '/github'

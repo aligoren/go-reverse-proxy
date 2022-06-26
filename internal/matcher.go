@@ -7,8 +7,7 @@ import (
 	"strings"
 )
 
-func Matcher(request *http.Request, proxyConfig *config.ProxyConfig) (*config.Route, error) {
-	var route *config.Route
+func findRoute(request *http.Request, proxyConfig *config.ProxyConfig) *config.Route {
 
 	headers := request.Header
 
@@ -18,11 +17,11 @@ func Matcher(request *http.Request, proxyConfig *config.ProxyConfig) (*config.Ro
 			routeType := strings.ToLower(proxyRoute.Type)
 			if routeType == "header" {
 				for key, routeHeader := range proxyRoute.Headers {
+
 					if strings.ToLower(key) == strings.ToLower(name) {
 						for _, value := range routeHeader.Values {
 							if strings.ToLower(headers.Get(key)) == strings.ToLower(value) {
-								route = &proxyRoute
-								break
+								return &proxyRoute
 							}
 						}
 					}
@@ -30,13 +29,19 @@ func Matcher(request *http.Request, proxyConfig *config.ProxyConfig) (*config.Ro
 			} else if routeType == "path" {
 				for _, routePath := range proxyRoute.Paths {
 					if routePath == strings.ToLower(request.URL.Path) {
-						route = &proxyRoute
-						break
+						return &proxyRoute
 					}
 				}
 			}
 		}
 	}
+
+	return nil
+}
+
+func Matcher(request *http.Request, proxyConfig *config.ProxyConfig) (*config.Route, error) {
+
+	route := findRoute(request, proxyConfig)
 
 	if route == nil {
 		return route, errors.New("there is no route found")
