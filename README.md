@@ -1,6 +1,6 @@
 # Simple, Basic, Stupid Reverse Proxy
 
-Hi there! This is a project that I'm coding to learn how reverse proxies work.
+Hi there! This is a project that I'm coding to learn how reverse proxies work. This project highly affect by Microsoft's [YARP](https://microsoft.github.io/reverse-proxy/) project
 
 I know, there's a lot of bad stuff in this warehouse. But you may want to review
 
@@ -63,3 +63,10 @@ To run this project;
 ## Help
 
 **Note:** I'm looking for help to make [matcher.go](/internal/matcher.go) file clean and fast :)
+
+## Resources
+
+- https://www.youtube.com/watch?v=vlPCAEUCCa0
+- https://gist.github.com/thurt/2ae1be5fd12a3501e7f049d96dc68bb9
+- https://pkg.go.dev/gopkg.in/yaml.v3
+- https://microsoft.github.io/reverse-proxy/articles/header-routing.html
